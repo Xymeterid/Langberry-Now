@@ -14,7 +14,7 @@ function getJishoTranslation(text){
       let retreivedData = {}; 
       retreivedData.kanji = foundItem["japanese"][0]["word"];
       retreivedData.reading = foundItem["japanese"][0]["reading"];
-      retreivedData.meanings = foundItem["senses"][0]["english_definitions"];
+      retreivedData.meanings = foundItem["senses"];
       return (retreivedData);
     }).catch(function(err) {
     console.log('Fetch Error :-S', err);

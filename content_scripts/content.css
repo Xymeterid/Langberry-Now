@@ -15,7 +15,7 @@
     box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16);
 }
 
-#id_content p a {
+#id_content p{
     color: #8ABC83;
     text-decoration: none;
 }
@@ -27,13 +27,15 @@
     color: #222;
     text-align: center;
     white-space: pre-wrap;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 #id_content ruby {
     font-size: 2em;
 }
 
-.close_btn {
+#id_content a {
     background-color: #909dc0;
     color: white;
     font-size: 1rem;
@@ -43,16 +45,54 @@
     padding: 2px 7px 5px 7px;
     line-height: 1;
     position: absolute;
-    right: .5rem;
-    top: .5rem;
 }
-  
-.close_btn:before {
-    content: "×";
-}
-  
-a.close_btn:hover {
+
+#id_content a:hover {
     color: white;
     background-color: #8abc83;
 }
+
+#id_content a:disabled {
+    color: white;
+    background-color: #192218;
+}
+
+.close_btn {
+    right: .5rem;
+    top: .5rem;
+}
+
+.close_btn:before {
+    content: "×";
+}
+
+#left_kanji_btn {
+    left: .5rem;
+    top: 3rem;
+}
+
+#right_kanji_btn {
+    right: .5rem;
+    top: 3rem;
+}
+
+#left_meaning_btn {
+    left: .5rem;
+    top: 6.1rem;
+}
+
+#right_meaning_btn {
+    right: .5rem;
+    top: 6.1rem;
+}
+
+.left_btn:before {
+    content: "<";
+}
+
+.right_btn:before {
+    content: ">";
+}
+  
+
   
