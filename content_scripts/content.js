@@ -3,12 +3,22 @@
 let lastClickX = 0;
 let lastClickY = 0;
 
+function removeCard(){
+    $("#id_wrapper").remove();
+}
+
 function showCard(data){
+    removeCard();
+
     let wrapper = $('<div>');
     let content = $('<div>');
 
     wrapper.attr("id", "id_wrapper");
     content.attr("id", "id_content");
+
+    wrapper.click(e =>{
+        e.stopPropagation();
+    });
 
     let kanji = data.kanji || '';
     let reading = data.reading || '';
@@ -43,6 +53,7 @@ document.onclick = function(e)
 {
     lastClickX = e.pageX;
     lastClickY = e.pageY;
+    removeCard();
 };
 
 chrome.runtime.onMessage.addListener(
