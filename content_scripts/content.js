@@ -1,11 +1,49 @@
 'use strict'
 
+let lastClickX = 0;
+let lastClickY = 0;
+
 function showCard(data){
-    var wrapper = $('<div>');
-    var content = $('<div>');
-    console.log("fuck yeah");
-    console.log(data);
+    let wrapper = $('<div>');
+    let content = $('<div>');
+
+    wrapper.attr("id", "id_wrapper");
+    content.attr("id", "id_content");
+
+    let kanji = data.kanji || '';
+    let reading = data.reading || '';
+    let meanings = data.meanings ? data.meanings.join(', ') : '';
+
+    let kanji_with_reading = $('<ruby>').text(kanji).append($('<rt>').text(reading));
+
+    content
+        .append($('<a>').addClass("close_btn").attr("id", "close_btn"))
+        .append($('<p>').append(kanji_with_reading))
+        .append($('<p>').text(meanings));
+    
+    wrapper.append(content);
+    $('body').append(wrapper);
+
+    let boxclose = $("#close_btn");
+
+    boxclose.click(event => {
+        wrapper.remove();
+    });
+
+    let width = $('#id_wrapper' ).innerWidth();
+    let height = $('#id_wrapper').innerHeight();
+    let currentY = lastClickY - 200;
+    let currentX = lastClickX - 25;
+
+    wrapper.css("top", currentY + "px");
+    wrapper.css("left", currentX + "px");
 }
+
+document.onclick = function(e)
+{
+    lastClickX = e.pageX;
+    lastClickY = e.pageY;
+};
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {

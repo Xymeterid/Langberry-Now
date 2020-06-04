@@ -5,7 +5,7 @@
 'use strict';
 
 function getJishoTranslation(text){
-  let apiRequest = "https://jisho.org/api/v1/search/words?keyword=" + text;
+  let apiRequest = "https://jisho.org/api/v1/search/words?keyword=\"" + text + "\"";
   let retreivedData = {"test": "test"};
   return fetch(apiRequest)
     .then(result => result.json())
@@ -14,7 +14,7 @@ function getJishoTranslation(text){
       let retreivedData = {}; 
       retreivedData.kanji = foundItem["japanese"][0]["word"];
       retreivedData.reading = foundItem["japanese"][0]["reading"];
-      retreivedData.meaning = foundItem["senses"][0]["english_definitions"];
+      retreivedData.meanings = foundItem["senses"][0]["english_definitions"];
       return (retreivedData);
     }).catch(function(err) {
     console.log('Fetch Error :-S', err);
