@@ -20,6 +20,12 @@ function showCard(data){
         e.stopPropagation();
     });
 
+    if ('error' in data){
+        content
+        .append($('<a>').addClass("close_btn").attr("id", "close_btn"))
+        .append($('<p>').append(data.error))
+    }
+    else{
     let kanji = data.kanji || '';
     let reading = data.reading || '';
     let meanings = data.meanings ? data.meanings.join(', ') : '';
@@ -30,7 +36,8 @@ function showCard(data){
         .append($('<a>').addClass("close_btn").attr("id", "close_btn"))
         .append($('<p>').append(kanji_with_reading))
         .append($('<p>').text(meanings));
-    
+    }
+
     wrapper.append(content);
     $('body').append(wrapper);
 

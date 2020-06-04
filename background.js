@@ -28,10 +28,16 @@ chrome.commands.onCommand.addListener(function(command) {
     let gotData = {};
 
       chrome.tabs.sendMessage(tabs[0].id, {message: "getSelection"}, function(response) {
-      if (response === null) console.log("something went wrong");
+      if (response === null) console.log("got null responce");
+      if (response.selection == "") return;
       let selectedText = (response.selection).trim();
       getJishoTranslation(selectedText).then(function(results){
         gotData = results;
+        if (gotData === undefined) {
+          gotData = {
+            "error":"No translation was found, sorry"
+          };
+        }
         gotData["message"] = "showCard";
         console.log(gotData);
         chrome.tabs.sendMessage(tabs[0].id, gotData);
