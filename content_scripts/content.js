@@ -33,9 +33,7 @@ function showCard(data) {
 
         content
             .append($('<a>').addClass("close_btn").attr("id", "close_btn"))
-            .append($('<a>').addClass("left_btn").attr("id", "left_kanji_btn"))
             .append($('<p>').append(kanji_with_reading))
-            .append($('<a>').addClass("right_btn").attr("id", "right_kanji_btn"))
             .append($('<a>').addClass("left_btn").attr("id", "left_meaning_btn"))
             .append($('<p>').text(meanings).attr("id", "meanings"))
             .append($('<a>').addClass("right_btn").attr("id", "right_meaning_btn"));
@@ -57,9 +55,13 @@ function showCard(data) {
         let meaning_next = $("#right_meaning_btn");
         let meaning_prev = $("#left_meaning_btn");
         meaning_prev.hide();
+        let meanings_array = data.meanings
+        if (Object.keys(meanings_array).length <= 1){
+            meaning_next.hide();
+        }
 
         function cycleMeaning(direction) {
-            let meanings_array = data.meanings;
+            
             if (direction > 0){
                 current_meaning++;
             }
@@ -91,9 +93,7 @@ function showCard(data) {
         meaning_next.click(event => cycleMeaning(1));
         meaning_prev.click(event => cycleMeaning(-1));
     }
-
-    let width = $('#id_wrapper').innerWidth();
-    let height = $('#id_wrapper').innerHeight();
+    
     let currentY = lastClickY - 200;
     let currentX = lastClickX - 25;
 

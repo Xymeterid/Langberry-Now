@@ -66,16 +66,6 @@
     content: "×";
 }
 
-#left_kanji_btn {
-    left: .5rem;
-    top: 3rem;
-}
-
-#right_kanji_btn {
-    right: .5rem;
-    top: 3rem;
-}
-
 #left_meaning_btn {
     left: .5rem;
     top: 6.1rem;
