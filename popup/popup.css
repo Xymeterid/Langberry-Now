@@ -1,16 +1,24 @@
 body {
-    background-color: rgb(105, 181, 253);
+    background-color: #69b5fd;
     font-size: 16px;
     height: 200px;
     width: 360px;
 }
 
-#title {
-    color: aliceblue;
+.content{
+    color: #f0f8ff;
     text-align: center;
 }
 
-.note {
+.content div{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reference{
+    font-size: 12px;
+}
+
+.jisho_ref{
     color: aliceblue;
-    text-align: center; 
 }

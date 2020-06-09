@@ -9,14 +9,14 @@
     width: 100%;
     position: relative;
     padding: 1rem;
-    background-color: #fff;
-    border: solid 1px #ccc;
+    background-color: #f0f8ff;
+    border: solid 1px #69b5fd;
     border-radius: 3px;
     box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16);
 }
 
 #id_content p{
-    color: #8ABC83;
+    color: #525B76;
     text-decoration: none;
 }
 
@@ -36,8 +36,8 @@
 }
 
 #id_content a {
-    background-color: #909dc0;
-    color: white;
+    background-color: #69b5fd;
+    color: #f0f8ff;
     font-size: 1rem;
     cursor:pointer;
     border-radius: 100%;
@@ -45,15 +45,16 @@
     padding: 2px 7px 5px 7px;
     line-height: 1;
     position: absolute;
+    text-decoration: none;
 }
 
 #id_content a:hover {
-    color: white;
-    background-color: #8abc83;
+    color: #f0f8ff;
+    background-color: #525B76;
 }
 
 #id_content a:disabled {
-    color: white;
+    color: #f0f8ff;
     background-color: #192218;
 }
 

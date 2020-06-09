@@ -2,14 +2,8 @@
   "manifest_version": 2,
 
   "name": "LangBerry Now",
-  "version": "1.1",
-  "description": "Instantly translate selected text in browser",
-
-  "permissions": [
-    "http://*/*",
-    "https://*/*",
-    "tabs"
-  ],
+  "version": "1.2",
+  "description": "Instantly translate selected text in browser from japanese to english and vice versa",
 
   "browser_action": {
     "default_title": "Langberry Now",
@@ -32,6 +26,12 @@
     }
   ],
 
+  "icons": { 
+    "16": "images/16x16.png",
+    "48": "images/48x48.png",
+   "128": "images/128x128.png" 
+  },
+
   "commands": {
     "langberry_translate": {
       "suggested_key": {
@@ -41,5 +41,5 @@
       "description": "Translate selected text"
     }
   }
-  
+    
 }
