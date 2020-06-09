@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(105, 181, 253);
+    font-size: 16px;
+    height: 200px;
+    width: 360px;
+}
+
+#title {
+    color: aliceblue;
+    text-align: center;
+}
+
+.note {
+    color: aliceblue;
+    text-align: center; 
+}

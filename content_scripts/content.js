@@ -96,6 +96,7 @@ function showCard(data) {
     
     let currentY = lastClickY - 200;
     let currentX = lastClickX - 25;
+    if (currentY < 0) currentY = lastClickY + 25;
 
     wrapper.css("top", currentY + "px");
     wrapper.css("left", currentX + "px");

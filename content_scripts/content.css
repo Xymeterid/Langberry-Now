@@ -68,12 +68,12 @@
 
 #left_meaning_btn {
     left: .5rem;
-    top: 6.1rem;
+    top: 3rem;
 }
 
 #right_meaning_btn {
     right: .5rem;
-    top: 6.1rem;
+    top: 3rem;
 }
 
 .left_btn:before {

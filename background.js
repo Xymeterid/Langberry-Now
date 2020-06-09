@@ -5,7 +5,7 @@
 'use strict';
 
 function getJishoTranslation(text){
-  let apiRequest = "https://jisho.org/api/v1/search/words?keyword=\"" + text + "\"";
+  let apiRequest = "https://jisho.org/api/v1/search/words?keyword=\"" + text.toLowerCase() + "\"";
   let retreivedData = {"test": "test"};
   return fetch(apiRequest)
     .then(result => result.json())
