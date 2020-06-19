@@ -36,8 +36,8 @@ function showCard(data) {
             .append($('<p>').append(kanji_with_reading))
             .append($('<a>').addClass("left_btn").attr("id", "left_meaning_btn"))
             .append($('<p>').text(meanings).attr("id", "meanings"))
-            .append($('<a>').addClass("right_btn").attr("id", "right_meaning_btn"));
-
+            .append($('<a>').addClass("right_btn").attr("id", "right_meaning_btn"))
+            .append($('<input>').addClass("input_box").val(kanji + "#" + meanings));
     }
 
     wrapper.append(content);
@@ -50,6 +50,7 @@ function showCard(data) {
     });
 
     if (!('error' in data)) {
+        let kanji = data.kanji
         let current_meaning = 0;
         let p_meanings = $("#meanings")
         let meaning_next = $("#right_meaning_btn");
@@ -59,6 +60,10 @@ function showCard(data) {
         if (Object.keys(meanings_array).length <= 1){
             meaning_next.hide();
         }
+
+        let input = $(".input_box").click(function () {
+            $(this).select();
+        });
 
         function cycleMeaning(direction) {
             
@@ -72,7 +77,8 @@ function showCard(data) {
             let new_meanings = meanings_array[current_meaning]["english_definitions"] ? data.meanings[current_meaning]["english_definitions"].join(', ') : '';
             p_meanings.text(new_meanings);
             console.log(Object.keys(meanings_array).length);
-    
+            input.val(kanji + "#" + new_meanings);
+
             if (current_meaning == (Object.keys(meanings_array).length) - 1) {
                 console.log("reached end");
                 meaning_next.hide();

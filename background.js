@@ -22,7 +22,7 @@ function getJishoTranslation(text){
 }
 
 chrome.commands.onCommand.addListener(function(command) {
-  if (command != "langberry_translate") return;
+  if (command === "langberry_translate") {
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     let gotData = {};
@@ -44,6 +44,6 @@ chrome.commands.onCommand.addListener(function(command) {
       });
     });
   });
-  
+}
 });
 

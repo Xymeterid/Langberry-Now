@@ -84,6 +84,11 @@
 .right_btn:before {
     content: ">";
 }
+
+.input_box{
+    width: 100%;
+    box-sizing: border-box;
+}
   
 
   
