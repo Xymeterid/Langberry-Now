@@ -3,10 +3,12 @@
 let lastClickX = 0;
 let lastClickY = 0;
 
+//Видаляє попередньо додану картку якщо вона існує
 function removeCard() {
     $("#id_wrapper").remove();
 }
 
+//Додає картку на екран з заданими параметрами
 function showCard(data) {
     removeCard();
 
@@ -113,6 +115,7 @@ document.onclick = function(e) {
     removeCard();
 };
 
+//Лісенер на повідомлення
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         setTimeout(function() {

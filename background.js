@@ -4,6 +4,7 @@
 
 'use strict';
 
+//Отримує переклад тексту з Jisho
 function getJishoTranslation(text){
   let apiRequest = "https://jisho.org/api/v1/search/words?keyword=\"" + text.toLowerCase() + "\"";
   let retreivedData = {"test": "test"};
